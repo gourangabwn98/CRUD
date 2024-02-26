@@ -47,16 +47,16 @@ function Manage() {
 
   const handleSave = () => {
     if (isCreating) {
-      setData([...data, edit]);
+      setData([...data, editableValues]);
       setIsCreating(false);
     } else {
       const newData = [...data];
       newData[selectedItem] = {
         ...newData[selectedItem],
-        Name: edit.Name,
-        Address: edit.Address,
-        Email: edit.Email,
-        Phone: edit.Phone,
+        Name: editableValues.Name,
+        Address: editableValues.Address,
+        Email: editableValues.Email,
+        Phone: editableValues.Phone,
       };
       setData(newData);
       setSelectedItem(null);
@@ -341,7 +341,7 @@ function Manage() {
                 placeholder="Enter the name"
                 type="text"
                 name="Name"
-                value={edit.Name}
+                value={editableValues.Name}
                 onChange={handleInputChange}
               />
             </div>
@@ -359,7 +359,7 @@ function Manage() {
                 placeholder="Enter the Address"
                 type="text"
                 name="Address"
-                value={edit.Address}
+                value={editableValues.Address}
                 onChange={handleInputChange}
               />
             </div>
@@ -377,7 +377,7 @@ function Manage() {
                 placeholder="Enter the Email"
                 type="text"
                 name="Email"
-                value={edit.Email}
+                value={editableValues.Email}
                 onChange={handleInputChange}
               />
             </div>
